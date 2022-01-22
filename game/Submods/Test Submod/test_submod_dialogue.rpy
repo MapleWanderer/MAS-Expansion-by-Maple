@@ -32,22 +32,23 @@ init 5 python:
             eventlabel="monika_testdia1",
             category=['test'],
             prompt="Test Dialogue 1",
-            random-True,
+            random=True,
             aff_range=(mas_aff.NORMAL, None)
         )
     )
 
 label monika_testdia1:
     m 1esa "I noticed you wanted me to say something [player]."
-    m expression "How's this?{nw}"
-$ _history_list.pop()
-menu:
-    m "How's this?{fast}"
+    m 1esa "How's this?{nw}"
+    $ _history_list.pop()
+    menu:
+        m "How's this?{fast}"
 
-    "Working!":
-        m 1esa "Yay! Now you can try giving me more things to say!"
-        m 1ksa "Happy coding!"
+        "Working!":
+            m 1esa "Yay! Now you can try giving me more things to say!"
+            m 1ksa "Happy coding!"
+            return
 
-    "Not working...":
-        m "Aww damn, better luck next time then [mas_get_player_nickname()]."
-    return
+        "Not working...":
+            m "Aww damn, better luck next time then [mas_get_player_nickname()]."
+            return
