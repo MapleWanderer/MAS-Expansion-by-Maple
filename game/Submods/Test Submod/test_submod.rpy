@@ -3,7 +3,7 @@ init -990 python in mas_submod_utils:
         author="MapleWanderer",
         name="Test Submod",
         description="A submod for playing around with MAS.",
-        version="0.0.1",
+        version="0.0.2",
         version_updates={},
         settings_pane=None
     )
