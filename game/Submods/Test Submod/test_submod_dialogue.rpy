@@ -3,7 +3,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="monika_testmodinstall",
-            category=['sex'],
+            category=['test'],
             prompt="Test Mod Install",
             conditional="not renpy.seen_label('monika_testmodinstall')",
             action=EV_ACT_QUEUE,
