@@ -3,7 +3,7 @@ init -990 python in mas_submod_utils:
         author="MapleWanderer",
         name="Test Submod",
         description="A submod for playing around with MAS.",
-        version="0.0.3",
+        version="0.0.5",
         version_updates={},
         settings_pane=None
     )
@@ -14,7 +14,7 @@ init -989 python in mwt_utils:
     #Register the updater if needed
     if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
         store.sup_utils.SubmodUpdater(
-            submod=store.mas_submod_utils.mwt_submod,
+            submod="Test Submod",
             user_name="MapleWanderer",
             repository_name="MAS-Submod-Test",
             update_dir="",
