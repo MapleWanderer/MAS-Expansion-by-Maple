@@ -23,7 +23,14 @@ init -989 python in mwt_utils:
         )
 
 screen mwt_submod_screen():
-    $ submods_screen_tt = store.renpy.get_screen("submods", "screens").scope["tooltip"]
+    python:
+        submods_screen = store.renpy.get_screen("submods", "screens")
+
+        if submods_screen:
+            _tooltip = submods_screen.scope.get("tooltip", None)
+        else:
+            _tooltip = None
+    
     vbox:
         box_wrap False
         xfill True
@@ -36,7 +43,7 @@ screen mwt_submod_screen():
             if _tooltip:
                 textbutton _("My dud setting #1"):
                     action NullAction()
-                    hovered SetField(_tooltip, "value", "This is an NSFW submod button which is inactive")
+                    hovered SetField(_tooltip, "value", "This is my submod button which is inactive")
                     unhovered SetField(_tooltip, "value", _tooltip.default())
 
             else:
