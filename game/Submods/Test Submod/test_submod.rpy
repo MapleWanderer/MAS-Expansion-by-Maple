@@ -17,7 +17,6 @@ init -989 python in mwt_utils:
             submod=store.mas_submod_utils.mwt_submod,
             user_name="MapleWanderer",
             repository_name="MAS-Submod-Test",
-            tag_formatter=lambda x: x[x.index('_') + 1:],
             update_dir="",
             attachment_id=None,
         )
