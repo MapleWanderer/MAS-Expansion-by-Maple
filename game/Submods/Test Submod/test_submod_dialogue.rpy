@@ -3,7 +3,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="monika_testmodinstall",
-            category=['sex'],
+            category=['test'],
             prompt="Test Mod Install",
             conditional="not renpy.seen_label('monika_testmodinstall')",
             action=EV_ACT_QUEUE,
@@ -11,7 +11,7 @@ init 5 python:
         )
     )
 
-label monika_:
+label monika_testmodinstall:
     m 1esc "Hey [mas_get_player_nickname()], I noticed something weird just now..."
     m 1rsc "I'm kind of getting this feeling that... something's changed in this mod."
     m 1etc "Do you know anything about this, [player]?"
