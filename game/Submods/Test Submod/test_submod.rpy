@@ -14,7 +14,7 @@ init -989 python in mwt_utils:
     #Register the updater if needed
     if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
         store.sup_utils.SubmodUpdater(
-            submod=store.mas_submod_utils.ahc_submod,
+            submod=store.mas_submod_utils.mwt_submod,
             user_name="MapleWanderer",
             repository_name="MAS-Submod-Test",
             tag_formatter=lambda x: x[x.index('_') + 1:],
@@ -34,11 +34,11 @@ screen mwt_submod_screen():
             box_wrap False
 
             if _tooltip:
-                textbutton _("NSFW dud setting #1"):
+                textbutton _("My dud setting #1"):
                     action NullAction()
                     hovered SetField(_tooltip, "value", "This is an NSFW submod button which is inactive")
                     unhovered SetField(_tooltip, "value", _tooltip.default())
 
             else:
-                textbutton _("NSFW dud setting #1"):
+                textbutton _("My dud setting #1"):
                     action NullAction()
