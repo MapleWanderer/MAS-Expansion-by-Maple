@@ -5,7 +5,7 @@ init -990 python in mas_submod_utils:
         description="A submod for playing around with MAS.",
         version="0.0.1",
         version_updates={},
-        settings_pane="mwt_submod_screen"
+        settings_pane=None
     )
 
 init -989 python in mwt_utils:
