@@ -59,7 +59,7 @@ init 5 python:
             persistent.farewell_database,
             eventlabel="bye_testbye",
             unlocked=True,
-            prompt="I'm going to chill out."
+            prompt="I'm going to chill out.",
             pool=True
         ),
         code="BYE"
