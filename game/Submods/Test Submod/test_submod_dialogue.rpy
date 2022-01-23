@@ -66,5 +66,12 @@ init 5 python:
     )
 
 label bye_testbye:
-    m 1tsu "Don't chill out too hard [mas_get_player_nickname()]."
+    $ session_time = mas_getSessionLength()
+    if session_time < datetime.timedelta(minutes=20):
+        m 2wfx "Chill out?"
+        m 6rfp "I guess I'm just too stressful for you, huh [player]."
+        extend ".{w=0.7}.{w=0.7}.{w=1}"
+        m 1hub "Hahaha, just messing with you [mas_get_player_nickname()]. Enjoy chillaxing!"
+    else
+        m 1tsu "Don't chill out too hard [mas_get_player_nickname()]."
     return 'quit'
