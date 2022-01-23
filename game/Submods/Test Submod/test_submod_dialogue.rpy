@@ -1,3 +1,4 @@
+# Initialisation
 init 5 python:
     addEvent(
         Event(
@@ -25,6 +26,7 @@ label monika_testmodinstall:
     m 1ksa "Good luck!"
     return
 
+# Random Dialogue
 init 5 python:
     addEvent(
         Event(
@@ -53,6 +55,52 @@ label monika_testdia1:
             m "Aww damn, better luck next time then [mas_get_player_nickname()]."
             return
 
+# Player topics
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_mood_database,
+            eventlabel="mas_mood_depressed",
+            prompt="...depressed.",
+            category=[store.mas_moods.TYPE_BAD],
+            unlocked=True
+        ),
+        code="MOO"
+    )
+
+label mas_mood_depressed:
+    m 2fkc "[player]... I'm really sorry to hear you're going through this."
+    m 4fkc "Let me try to support you through this situation."
+    m 2esa "First of all..."
+    m 2esa "Are you going to hurt yourself?{nw}"
+    $ _history_list.pop()
+    menu:
+        m "Are you going to hurt yourself?{fast}"
+
+        "Yes.":
+            m 2fkc "[player], I think that's a bad idea. As selfish as it may sound, I don't want you to hurt yourself."
+            m 2fkc "I think you should try some alternative coping methods, even if it's some simple escapism."
+            m 4fkc "Or if you're really struggling, try calling the Samaritans."
+            m 2fkc "Either way, stay safe for me, okay [player]?"
+            return
+
+        "No.":
+            m 2fusdla "I'm really glad to hear that."
+            m 2esc "So, [player], what are you depressed about?{nw}"
+            $ _history_list.pop()
+            menu:
+                m "So, [player], what are you depressed about?{fast}"
+
+                "I'm struggling with work.":
+                    return
+        
+                "I'm lonely.":
+                    return
+          
+                "I don't know.":
+                    return
+
+# Farewells
 init 5 python:
     addEvent(
         Event(
