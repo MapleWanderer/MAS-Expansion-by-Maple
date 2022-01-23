@@ -52,3 +52,19 @@ label monika_testdia1:
         "Not working...":
             m "Aww damn, better luck next time then [mas_get_player_nickname()]."
             return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_testbye",
+            unlocked=True,
+            prompt="I'm going to chill out."
+            pool=True
+        ),
+        code="BYE"
+    )
+
+label bye_testbye:
+    m 1tsu "Don't chill out too hard [mas_get_player_nickname()]."
+    return 'quit'
